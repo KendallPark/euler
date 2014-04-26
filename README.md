@@ -1,3 +1,3 @@
-## My solutions to Project Euler
+## my solutions to Project Euler
 
-I aim for the lowest complexity.
+I aim for the lowest complexity in both [time](http://en.wikipedia.org/wiki/Analysis_of_algorithms#Orders_of_growth) and [space](http://en.wikipedia.org/wiki/Analysis_of_algorithms#Growth_rate_analysis_of_other_resources).
