@@ -7,4 +7,4 @@ prob | time                    | space          | stack depth
 ---- | ----------------------- | -------------- | --------------
   1  | O(1)                    | O(1)           | O(1)
   2  | O(1)                    | O(1)           | O(1)
-  3  | O(n) aka O(n^0.5*n^0.5) | O(log(n))-ish? | O(log(n))-ish?
+  3  | O(n^0.5)                | O(log(n))      | O(log(n))     
