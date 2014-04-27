@@ -18,6 +18,7 @@ MAGIC_NUM = 0.3277240618154451 # derived experimentally
 
 # time:  O(1)
 # space: O(1)
+# stack: O(1)
 
 # 0.06s user 
 # 0.03s system 

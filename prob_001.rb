@@ -5,6 +5,7 @@
 
 # time:  O(1)
 # space: O(1)
+# stack: O(1)
 
 # 0.05s user 
 # 0.03s system 
