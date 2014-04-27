@@ -3,23 +3,35 @@
 
 # Find the largest palindrome made from the product of two 3-digit numbers.
 
-# Some ideas...
+# time:  O(n^2)
+# space: O(1)
+# stack: O(1)
 
-# Number theory could have some cool tricks. Also, logs
+# 0.27s user 
+# 0.03s system 
+# 86% cpu 
+# 0.352 total
 
-# This is very base 10-ish
+def brute_largest_palindrome_product(digits)
+  min = 10**(digits-1)
+  max = 10**(digits) - 1
 
-# The check for a palindrome is O(1)
+  largest = 0
 
-# Brute force would iterate through ALL possible multiples 
-# between 100 and 999 O(n^2)
+  i = min
+  (min..max).each do |i|
+    (min..(max - i + 1)).each do |j|
+      product = i*j
+      largest = product if palindrome?(product) and product > largest
+    end
+  end
+  largest
+end
 
-# That's a 1000 x 1000 matrix!
+def palindrome?(number)
+  num = number.to_s
+  half = num.length/2
+  num[0, half] == num[num.length-half, num.length].reverse
+end
 
-# Perhaps working backwards... which is larger, the number of 
-# palindromic numbers or the number of possible products?
-
-# What is n again? The range.
-
-# Memoization? If x isn't palindromic, it follows that y, and z
-# won't be...
+puts brute_largest_palindrome_product(3)
