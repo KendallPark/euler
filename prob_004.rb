@@ -3,6 +3,12 @@
 
 # Find the largest palindrome made from the product of two 3-digit numbers.
 
+# There's an optimization for a reduction to O(0.5*n^2)
+# But that's still O(n^2) so whatevs.
+
+# Some people get fancy with 11's, but that's not an guarenteed solution
+# as odd-digited palindromic numbers aren't products of 11.
+
 # time:  O(n^2)
 # space: O(1)
 # stack: O(1)
@@ -19,8 +25,8 @@ def brute_largest_palindrome_product(digits)
   largest = 0
 
   i = min
-  (min..max).each do |i|
-    (min..(max - i + 1)).each do |j|
+  for i in (min..max)
+    for j in (min..max)
       product = i*j
       largest = product if palindrome?(product) and product > largest
     end
