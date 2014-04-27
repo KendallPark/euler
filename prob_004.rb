@@ -3,9 +3,6 @@
 
 # Find the largest palindrome made from the product of two 3-digit numbers.
 
-# There's an optimization for a reduction to O(0.5*n^2)
-# But that's still O(n^2) so whatevs.
-
 # Some people get fancy with 11's, but that's not an guarenteed solution
 # as odd-digited palindromic numbers aren't products of 11.
 
@@ -18,15 +15,17 @@
 # 86% cpu 
 # 0.352 total
 
-def brute_largest_palindrome_product(digits)
+def largest_palindrome_for_x_digit_numbers(digits)
   min = 10**(digits-1)
   max = 10**(digits) - 1
+  brute_largest_palindrome_product(min, max)
+end
 
+def brute_largest_palindrome_product(min, max)
   largest = 0
 
-  i = min
   for i in (min..max)
-    for j in (min..max)
+    for j in (i..max)
       product = i*j
       largest = product if palindrome?(product) and product > largest
     end
@@ -40,4 +39,4 @@ def palindrome?(number)
   num[0, half] == num[num.length-half, num.length].reverse
 end
 
-puts brute_largest_palindrome_product(3)
+puts largest_palindrome_for_x_digit_numbers(3)
