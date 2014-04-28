@@ -10,38 +10,12 @@
 # http://www.whim.org/nebula/math/lambertw.html
 # http://perso-laris.univ-angers.fr/~chapeau/papers/lambertw.pdf
 
-def approx_array_size_need(n)
+def sieve_size(n)
   Math::E**(-w_1(-(1.0/n)))
-end
-
-def power_tower(a)
-  x1 = Math.log(a) / w0(Math.log(a))
-  x2 = Math::E**(w0(Math.log(a)))
-  puts "x^x = #{a}"
-  puts "#{x1}^#{x2} = #{x1**x2}"
 end
 
 def ln(x)
   Math.log(x, Math::E)
-end
-
-def w0(x)
-  e = Math::E
-  eps = 0.00000001 # max error
-  if x > 10
-    w = Math.log(x) - Math.log(Math.log(x))
-  elsif (0 <= x) && (x <= 10) 
-    w = 0
-  elsif (-1.0/e <= x) && (x < 0)
-    w = 0
-  end
-  while true
-    ew = e**w
-    w_new = w - (w * ew - x)/(w * ew + ew)
-    break if (w - w_new).abs <= eps
-    w = w_new
-  end
-  w
 end
 
 def w_1(x)
@@ -60,9 +34,7 @@ def w_1(x)
   w
 end
 
-puts approx_array_size_need(1000)
+puts sieve_size(1000)
 
 # should be -3.57715
 # puts w_1(-0.1)
-
-# power_tower(3)
