@@ -10,6 +10,31 @@
 # http://www.whim.org/nebula/math/lambertw.html
 # http://perso-laris.univ-angers.fr/~chapeau/papers/lambertw.pdf
 
+# time:  O(n)
+# space: O(e^(n))?
+# stack: O(1)
+
+# 0.12s user 
+# 0.03s system 
+# 75% cpu 
+# 0.199 total
+
+def nth_prime(n)
+  max = sieve_size(n)
+  sieve = Array.new(max, true)
+  primes = 0
+  for i in (2..max)
+    if sieve[i]
+      primes += 1
+      return i if primes == n
+
+      (i**2).step(max, i) do |x| 
+        sieve[x] = false
+      end
+    end
+  end
+end
+
 def sieve_size(n)
   Math::E**(-w_1(-(1.0/n)))
 end
@@ -19,7 +44,6 @@ def ln(x)
 end
 
 def w_1(x)
-  puts x
   e = Math::E
   if (-1.0/e <= x) && (x <= -0.333)
     p = -(2*(e*x+1))**0.5
@@ -34,7 +58,4 @@ def w_1(x)
   w
 end
 
-puts sieve_size(1000)
-
-# should be -3.57715
-# puts w_1(-0.1)
+puts nth_prime(10001)

@@ -11,3 +11,4 @@ prob | time                    | space          | stack depth
   4  | O(n^2)                  | O(1)           | O(1)
   5  | O(n)                    | O(n)           | O(1)
   6  | O(1)                    | O(1)           | O(1)
+  7  | O(n)                    | O(e^n)?        | O(1)
