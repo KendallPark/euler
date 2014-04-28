@@ -9,6 +9,6 @@ prob | time                    | space          | stack depth
   2  | O(1)                    | O(1)           | O(1)
   3  | O(n^0.5)                | O(log(n))      | O(log(n))     
   4  | O(n^2)                  | O(1)           | O(1)
-  5  | O(n)                    | O(n)           | O(1)
+  5  | O(n*log(log(n)))        | O(n)           | O(1)
   6  | O(1)                    | O(1)           | O(1)
-  7  | O(n)                    | O(e^n)?        | O(1)
+  7  | O(n*log(log(n)))        | O(e^n)?        | O(1)

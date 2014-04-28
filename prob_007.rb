@@ -10,7 +10,7 @@
 # http://www.whim.org/nebula/math/lambertw.html
 # http://perso-laris.univ-angers.fr/~chapeau/papers/lambertw.pdf
 
-# time:  O(n)
+# time:  O(n*log(log(n)))
 # space: O(e^(n))?
 # stack: O(1)
 

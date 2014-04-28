@@ -7,7 +7,7 @@
 # useful:
 # http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 
-# time:  O(n)
+# time:  O(n*log(log(n)))
 # space: O(n)
 # stack: O(1)
 
