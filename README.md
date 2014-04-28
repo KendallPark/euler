@@ -12,3 +12,4 @@ prob | time                    | space          | stack depth
   5  | O(n*log(log(n)))        | O(n)           | O(1)
   6  | O(1)                    | O(1)           | O(1)
   7  | O(n*log(log(n)))        | O(e^n)?        | O(1)
+  8  | O(n)                    | O(n)           | O(1)
